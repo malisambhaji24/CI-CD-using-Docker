@@ -1,5 +1,9 @@
 pipeline {
     agent any
+	tools
+    {
+       maven "Maven"
+    }
 	
  stages {
       stage('checkout') {
@@ -12,7 +16,7 @@ pipeline {
 	 stage('Execute Maven') {
            steps {
              
-                sh 'maven package'             
+                sh 'mvn package'             
           }
         }
         
